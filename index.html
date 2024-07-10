@@ -4,115 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subhadeep's Website</title>
+
     <style>
+                 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        :root {
+            --bg-color: #000000;
+            --text-color: #00ff00;
+            --highlight-color: #ffffff;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'VT323', monospace;
+            font-size: 18px;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            border: 20px solid var(--text-color);
+            min-height: 100vh;
+            box-sizing: border-box;
         }
         header {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
+            text-align: center;
+            border-bottom: 2px solid var(--text-color);
+            padding-bottom: 20px;
             margin-bottom: 20px;
         }
         h1 {
-            margin: 0;
-        }
-
-        .profile-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 20px;
-        }
-
-        .quote {
-            font-style: italic;
-            font-size: 1.1em;
-            border-left: 4px solid #0066cc;
-            padding-left: 20px;
-            margin: 20px 0;
-            color: #555;
-        }
-        .quote-author {
-            font-weight: bold;
-            display: block;
-            text-align: right;
-            margin-top: 10px;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
         nav {
-            margin-top: 10px;
+            margin-top: 20px;
         }
         nav a {
             margin-right: 15px;
             text-decoration: none;
-            color: #0066cc;
+            color: var(--text-color);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            color: var(--highlight-color);
+            text-decoration: underline;
+        }
+        section {
+            margin-top: 30px;
+            border: 2px solid var(--text-color);
+            padding: 20px;
         }
         h2 {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
+            border-bottom: 1px solid var(--text-color);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            image-rendering: pixelated;
+            border: 2px solid var(--text-color);
+        }
+        blockquote {
+            border-left: 3px solid var(--text-color);
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
         }
         footer {
-            margin-top: 20px;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
-            font-size: 0.9em;
-            color: #666;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--text-color);
         }
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--highlight-color);
+            text-decoration: underline;
+        }
+        /* Blinking cursor effect */
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .cursor::after {
+            content: "█";
+            animation: blink 1s infinite;
+        } 
     </style>
 </head>
 <body>
-  <header>
-        <img src="my_photo.jpg" alt="Your Name" class="profile-photo">
+    <center>
+    <header>
         <h1>Subhadeep Chatterjee</h1>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#publications">Publications</a>
+            <a href="#home">Home</a> |
+            <a href="#about">About</a> |
+            <a href="#publications">Publications</a> |
             <a href="#contact">Contact</a>
         </nav>
     </header>
+    <hr width="50%">
 
     <main>
         <section id="home">
             <h2>Welcome</h2>
+            <img src="my_photo.png" alt="Subhadeep Chatterjee" width="400" height="300">
             <p>This is my website hope you have a wonderful time and I hope you are having a wonderful day.</p>
-            <div class="quote">
-                "Humans are the most powerful creatures, because we have the power to change ourselves"
-                <span class="quote-author">- Saitama ( One Punch Man )</span>
-            </div>
+            <blockquote>
+                <i>"Humans are the most powerful creatures, because we have the power to change ourselves"</i>
+                <br>
+                <b>- Saitama ( One Punch Man )</b>
+            </blockquote>
         </section>
+
+        <hr width="50%">
 
         <section id="about">
             <h2>About</h2>
-            <p>I am currently a master's student at UCSD advised by prof. Nikolay Atanasov. My main area of expertise/research is reinforcement learning, non-linear control, game theory. I like the math and theory that makes these subjects what they are. I am very interested in building really big robots to fight the kaijus that will attempt to reign our earth in the year 2124. I mostly live in the clouds but I try to have my foot in the ground. I love to play games and this love has guided me to make quite a few unfinished game engines and physics simulations. I want to make my own chip and computer someday with my own flavour of assembly language. I want to make everything from scratch. People say not to reinvent the wheel, but I disagree, I want to reinvent the wheel so that I can reinvent the airplane, so that I can reinvent the terraforming space ship that gave life to mars in the year 2525.</p>
+            <p>I am currently a master's student at UCSD advised by prof. Nikolay Atanasov. My main area of expertise/research is reinforcement learning, non-linear control, game theory. I like the math and theory that makes these subjects what they are. I am very interested in building really big robots to fight the kaijus that will attempt to reign our earth in the year 2124. I mostly live in the clouds but I try to have my foot in the ground.</p>
+            <p>I love to play games and this love has guided me to make quite a few unfinished game engines and physics simulations. I want to make my own chip and computer someday with my own flavour of assembly language. I want to make everything from scratch. People say not to reinvent the wheel, but I disagree, I want to reinvent the wheel so that I can reinvent the airplane, so that I can reinvent the terraforming space ship that gave life to mars in the year 2525.</p>
             <p>My future area of research is to make machine and humans one. Robots/machines and humanity should not be against each other but rather should be extension of each other. I want to make this happen in my lifetime. Also controlling big robots will be more fun this way.</p>
-
             <p>I do not want to call myself an artist but I do dabble my fingers in art. I frequently combine engineering and art as there is no line between as most professionals would not say. I do not think art and science are separate. They are the leafs from the same STEM ( ba dum tshhh... ). I would add some of my artwork here as and when I get over my fear of getting judged.</p>
         </section>
+
+        <hr width="50%">
 
         <section id="publications">
             <h2>Publications</h2>
             <ul>
                 <li>Coming soon...</li>
-                <!-- <li>Publication 2</li> -->
-                <!-- <li>Publication 3</li> -->
             </ul>
         </section>
+
+        <hr width="50%">
 
         <section id="contact">
             <h2>Contact</h2>
             <p>Feel free to dm me on <a href="https://x.com/subha_chatt">x</a></p>
-            <p>Or shoot me an email at <a href="">subhadeepc19@gmail.com</a></p>
+            <p>Or shoot me an email at <a href="mailto:subhadeepc19@gmail.com">subhadeepc19@gmail.com</a></p>
         </section>
     </main>
 
+    <hr width="50%">
     <footer>
         <p>&copy; 2024 Subhadeep Chatterjee. All rights reserved.</p>
     </footer>
+    </center>
 </body>
 </html>
