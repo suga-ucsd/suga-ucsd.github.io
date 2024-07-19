@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subhadeep's Blog</title>
     <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
         summary {
             list-style: none;
+            cursor: pointer;
         }
         summary::-webkit-details-marker {
             display: none;
@@ -15,33 +22,49 @@
             list-style-type: none;
             padding-left: 0;
         }
+        .blog-post {
+            /* border: 1px solid #ccc; */
+            /* padding: 20px; */
+            /* margin-bottom: 20px; */
+            text-align: justify;
+        }
+        .blog-post h3 {
+            text-align: center;
+        }
+        .blog-content {
+            text-align: justify;
+        }
     </style>
 </head>
 <body>
-    <center>
     <header>
         <h1>Subhadeep's Blog</h1>
         <nav>
             <a href="index.html">Back to Home</a>
         </nav>
     </header>
-    <hr width="50%">
+    <hr>
 
     <main>
         <section id="blog">
             <h2>Blog Posts</h2>
             <ul>
-                <li>
-                    <h3>2024-07-18 - My First Blog Post</h3>
+                <li class="blog-post">
+
                     <details>
-                        <summary>Click to expand</summary>
-                        <p>This is the content of my first blog post. It's very exciting!</p>
+                        <summary><h3>2024-07-18 - My First Blog Post</h3></summary>
+                        <div class="blog-content">
+                            <p>This is the content of my first blog post. It's very exciting! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
                     </details>
                 </li>
-                <li>
+                <li class="blog-post">
+
                     <details>
                         <summary><h3>2024-07-19 - Reflections on AI</h3></summary>
-                        <p>Today, I want to share my thoughts on the current state of AI and its future implications.</p>
+                        <div class="blog-content">
+                            <p>Today, I want to share my thoughts on the current state of AI and its future implications. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
                     </details>
                 </li>
                 <!-- Add more blog posts here -->
@@ -49,10 +72,9 @@
         </section>
     </main>
 
-    <hr width="50%">
+    <hr>
     <footer>
         <p>&copy; 2024 Subhadeep Chatterjee. All rights reserved.</p>
     </footer>
-    </center>
 </body>
 </html>
