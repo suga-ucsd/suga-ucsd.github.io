@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>On the importance of Linux</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<header>
+  <h1>On a data structure for a semi accurate human sim for an RTS (SRTS-00)</h1>
+  <p>2025-03-14</p>
+  <a href="../blog.html">← Back to Blog</a>
+</header>
+
+<hr>
+
+<article>
+<div class="blog-content">
+<img src="blog7.gif" class="blogpic">
+                            <p>A surprise on Pi day haha. But this idea was supposed to be written about 5 months ago. I had formulated everything. But now I am in a creative rut, leading to not being able to recollect what I formulated. But thats okay. I just need to reformulate everything. Its actually just making a data structure that makes traversal easy. But what traversal? So heres the basic idea. The game setting is mainly an RTS in a space environment with different solar systems/planet/galaxies forming clans, them having internal conflicts, external conflicts, possibility of formation of artificial halo ring type "planets" that houses people because of overpopulation. You can be anyone in this universe, ANY ONE. This game will be like dwarf fortress but in space and with RTS elements in it. I want the game to run like DOOM. That is, it should run without any graphics whatsoever, the algorithm should run even if we cant see anything.</p>
+                        <p>
+                        Now lets get into the logistics of the game and swiftly avoid the topic of the data structure till the end of the paragraph so when I figure it out I can add it at the end of this paragraph. Starting with procedural generation. Every aspect of this game should be made procedurally. Every new game is randomly generated, each having a unique seed. So every new game is a new universe with VERY different planets, solar systems etc. just like No Man's Sky. Now the RTS element only comes into play if your protagonist is successfull in beocoming a fleet/ship commander both in space and in a planet both in army and navy. This idea of RTS I took inspiration from Legend of the galactic heroes. Now the initial design will only posses RTS in the space ship level. Out of all the elements I mentioned above, I am the least experienced in the RTS element of it. I need to see the RTS elements in different games and see how its done. Take notes and everything.
+                        </p>
+                        <p>
+                        I have a hypothesis of a data structure to be used. I call it "Hash graph" working name for now. Basically I am going to make a hash function that takes in some sequence of letters and numbers and gives out the node(here the person) associated with it. We will get a graph where this person is the root node and the other nodes are all the people this person knows. I am currently on the fence whether I should use an adjacency matrix for the edges, the edges will describe how the one node is related to the other. This way I would have everything about each person for a randomly generated universe. I am thinking the generation of universe elements and generation of people elements differently, but the latter will be depended on the first one. Now what about the algorithm. By algorithm I mean the game loop. The game loop will basically be leading the life of a person. But its very vague and definitely boring for any person playing the game. I need to make some objectives. But for sure the game will start when the protagonist is in their early twenties. 
+                        </p>
+                        <p>
+                        May be I should put some objectives, starting with different professions someone can be in. Vaguely they can farmer, soldier, homeless, university student (you can chose the major). May be more But I am not quite sure. So the game plan is to first make a 2D game engine like a rogue-like. May be start with a terminal based application like any rogue-like. For now this is the first step and my plan is kind of set. Of course EVERYTHING will be written in C and mostly from scratch other than window stuff idk.
+                        </p>
+                        </div>
+</article>
+
+</body>
+</html>
+
+
