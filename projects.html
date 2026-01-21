@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhadeep's Website</title>
+    <link rel="stylesheet" href="index.css" >
+        <style>
+        details {
+            width: 80%;
+            margin: 40px auto;
+            text-align: left;
+        }
+
+        summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .summary-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .summary-image {
+            width: 180px;
+            height: 120px;
+            border: 1px dashed #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        <!-- .summary-title { -->
+        <!--     font-size: 1.3em; -->
+        <!--     font-weight: bold; -->
+        <!-- } -->
+
+        .expanded-content {
+            margin-top: 30px;
+        }
+
+        .expanded-image {
+            width: 100%;
+            max-width: 650px;
+            height: 350px;
+            border: 1px dashed #aaa;
+            margin: 0 auto 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        details[open] {
+            scroll-margin-top: 120px;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+    <header>
+        <h1>Subhadeep Chatterjee</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="index.html#about">About</a> |
+            <a href="index.html#publications">Publications</a> |
+            <a href="projects.html">Projects</a> |
+            <a href="blog.html">Blog</a> |
+            <a href="resume.pdf">Resume</a> |
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+    <hr width="50%">
+
+<main>
+
+<h2>Research & Lab Projects</h2>
+
+<details>
+    <summary>
+        <div class="summary-container">
+            <div class="summary-image">Image</div>
+            <div class="summary-title">
+                LLM-Based Agentic RAG for Large Codebases<br>
+                <span style="font-weight: normal;">MURO Lab, UC San Diego</span>
+            </div>
+        </div>
+    </summary>
+
+    <div class="expanded-content">
+        <div class="expanded-image">Image</div>
+        <p>
+            This project focused on designing and deploying a production-grade, agentic
+            Retrieval-Augmented Generation system to help developers explore and reason
+            over large research codebases. The system was architected as a set of Ray Serve
+            microservices enabling scalable embedding generation, retrieval, and inference
+            across both CPUs and GPUs.
+        </p>
+        <p>
+            The language model was fine-tuned using pipeline parallelism and gradient
+            checkpointing, while dense retrieval and inference were optimized with custom
+            multiprocessing queues and CUDA-aware memory management. The final system
+            achieved sub-second latency under concurrent load and demonstrated strong
+            reliability for real-world usage by research teams.
+        </p>
+    </div>
+</details>
+
+<details>
+    <summary>
+        <div class="summary-container">
+            <div class="summary-image">Image</div>
+            <div class="summary-title">
+                Scalable Vision-Based Robotic Grasping<br>
+                <span style="font-weight: normal;">Existential Robotics Lab, UC San Diego</span>
+            </div>
+        </div>
+    </summary>
+
+    <div class="expanded-content">
+        <div class="expanded-image">Image</div>
+        <p>
+            In this work, I led the development of a highly scalable robotic learning
+            framework enabling vision-based grasping experiments across 64–128
+            parallel simulated environments. The system relied on multi-process PyTorch
+            pipelines orchestrated with Ray and torch.multiprocessing to efficiently
+            vectorize CNN rollouts.
+        </p>
+        <p>
+            GPU offloading via CuPy significantly reduced CPU bottlenecks and accelerated
+            reinforcement learning training by more than an order of magnitude. The entire
+            workflow was containerized using Docker to ensure reproducibility, fault
+            tolerance, and rapid experimentation across multi-GPU systems.
+        </p>
+    </div>
+</details>
+
+<details>
+    <summary>
+        <div class="summary-container">
+            <div class="summary-image">Image</div>
+            <div class="summary-title">
+                Differentiable SDF-Based Robotic Simulation<br>
+                <span style="font-weight: normal;">Existential Robotics Lab, UC San Diego</span>
+            </div>
+        </div>
+    </summary>
+
+    <div class="expanded-content">
+        <div class="expanded-image">Image</div>
+        <p>
+            This project explored the integration of signed distance function models into
+            robotic simulation pipelines to enable differentiable collision checking and
+            geometric reasoning. SDF models were implemented using JAX to leverage
+            auto-vectorized gradient computation for efficient backpropagation.
+        </p>
+        <p>
+            The resulting system improved simulation fidelity and enabled differentiable
+            policy optimization for complex robotic manipulation tasks, bridging the gap
+            between geometric modeling and learning-based control.
+        </p>
+    </div>
+</details>
+
+<h2>Systems, LLMs & Distributed ML</h2>
+
+<details>
+    <summary>
+        <div class="summary-container">
+            <div class="summary-image">Image</div>
+            <div class="summary-title">
+                LLM Inference Engine From Scratch
+            </div>
+        </div>
+    </summary>
+
+    <div class="expanded-content">
+        <div class="expanded-image">Image</div>
+        <p>
+            I implemented a GPT-style inference engine from first principles in C++ and
+            Python, focusing on low-latency and high-throughput inference. The engine
+            supports KV caching, paged attention, and incremental token decoding using
+            contiguous memory layouts.
+        </p>
+        <p>
+            Dynamic batching and streaming generation were exposed via FastAPI and gRPC,
+            while kernel-level profiling with NVIDIA Nsight guided optimizations for cache
+            residency and stream concurrency. Performance was benchmarked against
+            vLLM-style baselines to identify system bottlenecks.
+        </p>
+    </div>
+</details>
+<details>
+    <summary>
+        <div class="summary-container">
+            <div class="summary-image">Image</div>
+            <div class="summary-title">
+                Reinforcement Learning for Robotic Control at Scale
+            </div>
+        </div>
+    </summary>
+
+    <div class="expanded-content">
+        <div class="expanded-image">Image</div>
+        <p>
+            This project explored large-scale reinforcement learning for robotic
+            manipulation by training SAC and Transformer-based policies in MuJoCo
+            simulation. Thousands of environments were executed in parallel using JAX
+            vmap and pmap, enabling high-throughput policy evaluation and data collection.
+        </p>
+        <p>
+            Differentiable signed distance function models were integrated into the
+            simulation loop to provide real-time geometric reasoning and collision
+            awareness during training. This combination of large-scale parallelism and
+            differentiable geometry significantly improved learning stability and sample
+            efficiency for complex robotic control tasks.
+        </p>
+    </div>
+</details>
+<details>
+    <summary>
+        <div class="summary-container">
+            <div class="summary-image">Image</div>
+            <div class="summary-title">
+                Large-Scale Vision–Language Model Training
+            </div>
+        </div>
+    </summary>
+
+    <div class="expanded-content">
+        <div class="expanded-image">Image</div>
+        <p>
+            In this project, I designed and trained a CLIP-style vision–language model on
+            approximately 20 million image–text pairs using PyTorch Distributed Data
+            Parallel with NCCL collectives. A Ray-based data pipeline handled large-scale
+            sharded loading and on-the-fly augmentation, significantly reducing GPU idle
+            time during training.
+        </p>
+        <p>
+            Training efficiency was further improved through mixed-precision computation,
+            fused CUDA kernels, and careful tuning of inter-GPU communication. These
+            optimizations resulted in over 90% scaling efficiency across multiple GPUs,
+            demonstrating strong performance and stability for large-scale multimodal
+            pretraining workloads.
+        </p>
+    </div>
+</details>
+<details>
+    <summary>
+        <div class="summary-container">
+            <div class="summary-image">Image</div>
+            <div class="summary-title">
+                Distributed LLM Inference Pipeline<br>
+                <span style="font-weight: normal;">Tensor + Pipeline Parallelism</span>
+            </div>
+        </div>
+    </summary>
+
+    <div class="expanded-content">
+        <div class="expanded-image">Image</div>
+        <p>
+            This project focused on building a scalable, multi-GPU inference pipeline for
+            large language models by combining tensor parallelism with pipeline
+            parallelism. The system was designed to efficiently shard both model weights
+            and activations across GPUs, enabling inference on models that exceed the
+            memory capacity of a single device.
+        </p>
+        <p>
+            A gRPC-based activation sharding protocol was implemented with explicit
+            backpressure control to stabilize throughput under bursty request patterns.
+            End-to-end observability was achieved using Grafana and Prometheus dashboards
+            tracking GPU utilization, per-stage latency, interconnect bandwidth, and queue
+            depths, enabling systematic performance tuning and reliability analysis.
+        </p>
+    </div>
+</details>
+
+
+</main>
+
+    <hr width="50%">
+    <footer>
+        <p>&copy; 2024 Subhadeep Chatterjee. All rights reserved.</p>
+    </footer>
+    </center>
+</body>
+</html>
+
