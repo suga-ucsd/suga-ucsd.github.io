@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Subhadeep Chatterjee</title>
+    <link>https://suga-ucsd.github.io/blog.html</link>
+    <description>Blog Updates</description>
+    <language>en-us</language>
+
+    <item>
+      <title>First RSS feed</title>
+      <link>https://suga-ucsd.github.io/blog.html</link>
+      <description>This is just the first rss feed</description>
+      <pubDate>Thu 9:31 PM PST</pubDate>
+      <guid>https://suga-ucsd.github.io/blog.html</guid>
+    </item>
+
+  </channel>
+</rss>
+
